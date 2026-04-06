@@ -1,8 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf9f6;
+  --foreground: #1a1a1a;
+  --muted: #6b6b6b;
+  --muted-2: #999;
+  --border: #d4d0c8;
+  --border-light: #e8e4dc;
+  --panel: #ffffff;
+  --panel-alt: #f5f3ee;
+  --accent: #2563eb;
+  --accent-2: #7c3aed;
+  --canvas-bg: #ffffff;
+  --canvas-fg: #1a1a1a;
+  --canvas-grid: #e0ddd6;
+  --canvas-muted: #999;
+  --ke-color: #dc2626;
+  --pe-color: #2563eb;
+  --total-color: #16a34a;
+  --position-color: #2563eb;
+  --velocity-color: #dc2626;
+  --accel-color: #ca8a04;
+  --phase-color: #7c3aed;
+  --spring-color: #1a1a1a;
+  --mass-fill: #e8e4dc;
+  --mass-stroke: #1a1a1a;
+  --wall-fill: #d4d0c8;
+  --wall-hatch: #999;
+}
+
+[data-theme="dark"] {
+  --background: #0f0f0f;
+  --foreground: #e8e4dc;
+  --muted: #888;
+  --muted-2: #666;
+  --border: #2a2a2a;
+  --border-light: #1e1e1e;
+  --panel: #161616;
+  --panel-alt: #1a1a1a;
+  --accent: #60a5fa;
+  --accent-2: #a78bfa;
+  --canvas-bg: #161616;
+  --canvas-fg: #d4d0c8;
+  --canvas-grid: #252525;
+  --canvas-muted: #555;
+  --ke-color: #ef4444;
+  --pe-color: #60a5fa;
+  --total-color: #4ade80;
+  --position-color: #60a5fa;
+  --velocity-color: #ef4444;
+  --accel-color: #facc15;
+  --phase-color: #a78bfa;
+  --spring-color: #d4d0c8;
+  --mass-fill: #2a2a2a;
+  --mass-stroke: #d4d0c8;
+  --wall-fill: #333;
+  --wall-hatch: #555;
 }
 
 @theme inline {
@@ -12,15 +65,40 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--foreground);
+  border: 2px solid var(--background);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--foreground);
+  border: 2px solid var(--background);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
