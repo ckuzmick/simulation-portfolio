@@ -194,6 +194,7 @@ export default function SimpleHarmonicOscillatorPage() {
   const [b, setB] = useState(0);
   const [x0, setX0] = useState(150);
   const [running, setRunning] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
 
   const mainCanvasRef = useRef<HTMLCanvasElement>(null);
   const waveCanvasRef = useRef<HTMLCanvasElement>(null);
@@ -312,6 +313,7 @@ export default function SimpleHarmonicOscillatorPage() {
       const c = mainCanvas!;
       const w = c.getBoundingClientRect().width;
       const h = c.getBoundingClientRect().height;
+      if (w < 1 || h < 1) return;
       mainCtx.clearRect(0, 0, w, h);
 
       const wallX = 50;
@@ -775,31 +777,57 @@ export default function SimpleHarmonicOscillatorPage() {
           </div>
         </div>
 
-        {/* Spring diagram + parameter controls — sticky */}
+        {/* Spring diagram + parameter controls — sticky, collapsible */}
         <div
-          className="mt-3 rounded border overflow-hidden sticky top-4 z-10"
+          className="mt-3 rounded border overflow-hidden sticky top-4 z-10 transition-all"
           style={{ background: "var(--panel)", borderColor: "var(--border)" }}
         >
-          <canvas
-            ref={mainCanvasRef}
-            className="w-full"
-            style={{ height: 180, background: "var(--canvas-bg)" }}
-          />
-          <div
-            className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-5 p-6"
-            style={{ borderTop: "1px solid var(--border)" }}
-          >
-            <SliderControl label="Spring constant" symbol="k" unit="N/m" min={1} max={100} step={0.5} value={k} onChange={setK} />
-            <SliderControl label="Mass" symbol="m" unit="kg" min={0.1} max={10} step={0.1} value={mass} onChange={setMass} />
-            <SliderControl label="Damping" symbol="b" unit="Ns/m" min={0} max={40} step={0.1} value={b} onChange={setB} />
-            <SliderControl
-              label="Initial displacement"
-              symbol="x₀"
-              unit="m"
-              min={10} max={250} step={5}
-              value={x0} onChange={setX0}
-              displayValue={(v) => (v / 100).toFixed(2)}
-            />
+          {/* Collapsed bar */}
+          {collapsed && (
+            <div
+              className="flex items-center justify-between px-4 py-2 cursor-pointer"
+              onClick={() => setCollapsed(false)}
+            >
+              <span className="text-sm italic" style={{ color: "var(--muted)" }}>
+                Damped harmonic oscillator — {regime}
+              </span>
+              <span className="text-xs font-medium tracking-wide" style={{ color: "var(--muted)", fontFamily: "var(--font-geist-mono), monospace" }}>
+                show ↓
+              </span>
+            </div>
+          )}
+          {/* Full panel — hidden when collapsed but stays in DOM */}
+          <div style={{ display: collapsed ? "none" : "block" }}>
+            <div className="relative">
+              <canvas
+                ref={mainCanvasRef}
+                className="w-full"
+                style={{ height: 180, background: "var(--canvas-bg)" }}
+              />
+              <button
+                onClick={() => setCollapsed(true)}
+                className="absolute top-2 right-2 text-xs px-2 py-1 rounded border cursor-pointer"
+                style={{ background: "var(--panel)", borderColor: "var(--border)", color: "var(--muted)" }}
+              >
+                hide ↑
+              </button>
+            </div>
+            <div
+              className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-5 p-6"
+              style={{ borderTop: "1px solid var(--border)" }}
+            >
+              <SliderControl label="Spring constant" symbol="k" unit="N/m" min={1} max={100} step={0.5} value={k} onChange={setK} />
+              <SliderControl label="Mass" symbol="m" unit="kg" min={0.1} max={10} step={0.1} value={mass} onChange={setMass} />
+              <SliderControl label="Damping" symbol="b" unit="Ns/m" min={0} max={40} step={0.1} value={b} onChange={setB} />
+              <SliderControl
+                label="Initial displacement"
+                symbol="x₀"
+                unit="m"
+                min={10} max={250} step={5}
+                value={x0} onChange={setX0}
+                displayValue={(v) => (v / 100).toFixed(2)}
+              />
+            </div>
           </div>
         </div>
 

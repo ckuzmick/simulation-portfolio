@@ -25,6 +25,34 @@ const simulations: SimulationMeta[] = [
       "Double-slit interference from point sources with animated wavefronts. Explore single slit, double slit, and diffraction grating patterns with tunable wavelength and geometry.",
     tags: ["Waves", "Optics", "Interference"],
   },
+  {
+    slug: "projectile-motion",
+    title: "Projectile Motion",
+    description:
+      "Launch a projectile at any angle and watch it trace a parabolic arc under gravity. Compare ideal trajectories with quadratic air drag using real-time position plots and analytical overlays.",
+    tags: ["Classical Mechanics", "Kinematics", "Drag"],
+  },
+  {
+    slug: "ideal-gas",
+    title: "Ideal Gas Law",
+    description:
+      "Bouncing particles in a box linked by PV=nRT. Explore isothermal, isobaric, and isochoric processes with a live Maxwell-Boltzmann speed distribution and PV diagram.",
+    tags: ["Thermodynamics", "Statistical Mechanics", "Kinetic Theory"],
+  },
+  {
+    slug: "schrodinger-equation",
+    title: "Schr\u00F6dinger Equation",
+    description:
+      "Gaussian wave packet propagating through tunable potentials, solved with the split-operator FFT method. Watch quantum tunneling, reflection, and wave packet spreading in real time.",
+    tags: ["Quantum Mechanics", "Wave Functions", "Tunneling"],
+  },
+  {
+    slug: "thermodynamic-cycles",
+    title: "Thermodynamic Cycles",
+    description:
+      "Animated PV and TS diagrams for Carnot, Otto, Diesel, and Stirling cycles with a synchronized piston-cylinder visualization. Compare efficiencies and explore the thermodynamics of ideal heat engines.",
+    tags: ["Thermodynamics", "Heat Engines", "Efficiency"],
+  },
 ];
 
 export default function SimulationsGallery() {

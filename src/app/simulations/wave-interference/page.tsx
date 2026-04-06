@@ -784,8 +784,8 @@ export default function WaveInterferencePage() {
               <span className="text-sm italic" style={{ color: "var(--muted)" }}>
                 Wave interference — {mode}
               </span>
-              <span className="text-xs" style={{ color: "var(--muted)" }}>
-                &#9660; expand
+              <span className="text-xs font-medium tracking-wide" style={{ color: "var(--muted)", fontFamily: "var(--font-geist-mono), monospace" }}>
+                show ↓
               </span>
             </div>
           )}
@@ -802,7 +802,7 @@ export default function WaveInterferencePage() {
                 className="absolute top-2 right-2 text-xs px-2 py-1 rounded border cursor-pointer"
                 style={{ background: "var(--panel)", borderColor: "var(--border)", color: "var(--muted)" }}
               >
-                &#9650; collapse
+                hide ↑
               </button>
             </div>
             <div
