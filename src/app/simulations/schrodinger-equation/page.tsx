@@ -409,9 +409,9 @@ export default function SchrodingerEquationPage() {
   const expectCanvasRef = useRef<HTMLCanvasElement>(null);
   const momentumCanvasRef = useRef<HTMLCanvasElement>(null);
 
-  const psiReRef = useRef(new Float64Array(N));
-  const psiImRef = useRef(new Float64Array(N));
-  const potentialRef = useRef(new Float64Array(N));
+  const psiReRef = useRef<Float64Array>(new Float64Array(N));
+  const psiImRef = useRef<Float64Array>(new Float64Array(N));
+  const potentialRef = useRef<Float64Array>(new Float64Array(N));
   const absorbMaskRef = useRef<Float64Array | null>(buildAbsorbingMask());
   const timeRef = useRef(0);
   const expectHistRef = useRef<{ expX: number; expP: number; t: number }[]>([]);
