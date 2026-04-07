@@ -68,6 +68,13 @@ const simulations: SimulationMeta[] = [
     tags: ["Linear Algebra", "Transformations", "Matrices"],
   },
   {
+    slug: "hydrogen-orbitals",
+    title: "Hydrogen Atom Orbitals",
+    description:
+      "Three-dimensional probability clouds of the hydrogen electron. Explore s, p, d, and f orbitals with interactive quantum number controls and real spherical harmonics.",
+    tags: ["Quantum Mechanics", "Atomic Physics", "Orbitals"],
+  },
+  {
     slug: "special-relativity",
     title: "Special Relativity",
     description:
