@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@types/katex": "^0.16.8",
+    "@types/three": "^0.183.1",
     "katex": "^0.16.45",
     "next": "16.2.2",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

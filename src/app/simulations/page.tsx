@@ -53,6 +53,41 @@ const simulations: SimulationMeta[] = [
       "Animated PV and TS diagrams for Carnot, Otto, Diesel, and Stirling cycles with a synchronized piston-cylinder visualization. Compare efficiencies and explore the thermodynamics of ideal heat engines.",
     tags: ["Thermodynamics", "Heat Engines", "Efficiency"],
   },
+  {
+    slug: "pythagorean-theorem",
+    title: "Pythagorean Theorem",
+    description:
+      "A visual, interactive proof of the Pythagorean theorem using the classic rearrangement argument. Drag the triangle's legs and watch the areas balance in real time.",
+    tags: ["Geometry", "Proofs", "Euclidean"],
+  },
+  {
+    slug: "matrix-composition",
+    title: "Composition of Matrices",
+    description:
+      "See how 2\u00D72 matrices reshape the plane and how composition corresponds to multiplication. Explore rotations, reflections, shears, and the determinant as signed area.",
+    tags: ["Linear Algebra", "Transformations", "Matrices"],
+  },
+  {
+    slug: "special-relativity",
+    title: "Special Relativity",
+    description:
+      "An interactive Minkowski spacetime diagram. Drag the velocity slider to apply a Lorentz boost and watch simultaneity, time dilation, and length contraction emerge in real time.",
+    tags: ["Special Relativity", "Spacetime", "Lorentz Transformation"],
+  },
+  {
+    slug: "quantum-box-3d",
+    title: "3D Quantum Box",
+    description:
+      "Visualise stationary states of a particle in a cubic infinite potential well. Explore probability density isosurfaces, nodal planes, degeneracy, and cross-section heatmaps.",
+    tags: ["Quantum Mechanics", "3D Visualization", "Stationary States"],
+  },
+  {
+    slug: "schwarzschild-geodesics",
+    title: "Schwarzschild Geodesics",
+    description:
+      "Visualise orbits around a non-rotating black hole on a 3D embedding diagram. Explore bound orbits, plunges, and perihelion precession with an interactive effective potential.",
+    tags: ["General Relativity", "Black Holes", "Geodesics"],
+  },
 ];
 
 export default function SimulationsGallery() {
